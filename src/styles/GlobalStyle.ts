@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 
 // destructured theme properties
-const { mediaQueries, fonts, fontWeights, spacing } = theme;
+const { mediaQueries, fonts } = theme;
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    /* add custom font-family here */
+    font-family: ${fonts.fontLato};
     line-height: 1;
   }
 
@@ -30,10 +30,19 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: ${fonts.fontPlayfair};
+  }
+
   button,
   input,
   textarea {
-    /* add custom font-family here */
+    font-family: ${fonts.fontLato};
   }
 
   img,

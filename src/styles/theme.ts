@@ -20,18 +20,18 @@ const theme = {
 		black: '#000'
 	},
 	greys: {
-		// add any greys here
+		whiteSmoke: '#eee'
 	},
 	colors: {
-		primary: {
-			// add primary colors here
-		},
-		secondary: {
-			// add secondary colors here
-		}
+		supernova: '#fcb332',
+		niagara: '#20a08b',
+		lochmara: '#2d5ca7',
+		purpleHeart: '#4834ae',
+		gulfBlue: '#384160'
 	},
 	fonts: {
-		// add font-families here
+		fontLato: "'Lato', sans-serif",
+		fontPlayfair: "'Playfair Display', serif"
 	},
 	fontWeights: {
 		thin: 100,
