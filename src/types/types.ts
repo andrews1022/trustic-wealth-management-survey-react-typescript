@@ -1,18 +1,5 @@
 import React from 'react';
 
-export type FormContextType = {
-	formState: FormState;
-	formDispatch: React.Dispatch<any>;
-};
-
-export type FormState = {
-	checkedOptions: string[];
-	currentQuestion: number;
-	currentStep: number;
-	formIsSubmitted: boolean;
-	isModalOpen: boolean;
-};
-
 export type FormActions =
 	| { type: 'CLOSE_MODAL' }
 	| { type: 'FORM_IS_SUBMITTED' }
@@ -22,6 +9,19 @@ export type FormActions =
 	| { type: 'OPEN_MODAL' }
 	| { type: 'OPTION_CHECKED'; payload: string }
 	| { type: 'RESTART_SURVEY' };
+
+export type FormState = {
+	checkedOptions: string[];
+	currentQuestion: number;
+	currentStep: number;
+	formIsSubmitted: boolean;
+	isModalOpen: boolean;
+};
+
+export type FormContextType = {
+	formState: FormState;
+	formDispatch: React.Dispatch<FormActions>;
+};
 
 export type Option = {
 	forQuestion: number;

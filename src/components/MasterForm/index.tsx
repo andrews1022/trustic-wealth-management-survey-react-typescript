@@ -7,25 +7,28 @@ import FormContext from '../../context/FormContext';
 import Nav from '../Nav';
 import Modal from '../Modal';
 
+// styles
+import * as S from './styles';
+
 const MasterForm = () => {
 	const formContext = useContext(FormContext);
 
 	return (
 		<div>
 			{formContext.formState.currentStep !== 4 ? (
-				<div className='master-form'>
+				<S.Wrapper>
 					<Nav />
 
-					<div className='master-form__inner'>
+					<S.InnerWrapper>
 						<p>Intro and Question components will go here</p>
 						{/* <Intro /> */}
 						{/* <Question1 /> */}
 						{/* <Question2 /> */}
 						{/* <Question3 /> */}
-					</div>
+					</S.InnerWrapper>
 
 					<Modal />
-				</div>
+				</S.Wrapper>
 			) : (
 				<div>
 					<p>Results component will go here</p>
