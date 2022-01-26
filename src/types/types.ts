@@ -1,3 +1,10 @@
+import React from 'react';
+
+export type FormContextType = {
+	formState: FormState;
+	formDispatch: React.Dispatch<any>;
+};
+
 export type FormState = {
 	checkedOptions: string[];
 	currentQuestion: number;

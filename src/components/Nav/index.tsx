@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-type NavProps = {};
+// context
+import FormContext from '../../context/FormContext';
 
-const Nav = (props: NavProps) => {
+const Nav = () => {
+	const formContext = useContext(FormContext);
+
 	return (
-		<div>
-			<h2>Hello from the Nav!</h2>
-		</div>
+		<nav className='nav'>
+			<ul className='nav__list'>
+				<li className='nav__item'>
+					<button onClick={() => {}} type='button'>
+						Book an introductory call
+					</button>
+				</li>
+				<li className='nav__item'>
+					<button onClick={() => {}} type='button'>
+						Sign up for future retirement insights
+					</button>
+				</li>
+			</ul>
+		</nav>
 	);
 };
 

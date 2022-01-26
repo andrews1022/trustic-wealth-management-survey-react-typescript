@@ -10,7 +10,7 @@ import MasterForm from './components/MasterForm';
 const App = () => {
 	const [state, dispatch] = useReducer(formReducer, initialFormState);
 
-	const memoizedContext = useMemo(() => ({ formDispatch: dispatch, formState: state }), []);
+	const memoizedContext = useMemo(() => ({ formState: state, formDispatch: dispatch }), []);
 
 	return (
 		<FormContext.Provider value={memoizedContext}>
