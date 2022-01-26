@@ -1,6 +1,8 @@
 import { createContext } from 'react';
-// import { initialFormState } from '../reducer/formReducer';
 
-const FormContext = createContext({});
+// types
+import { FormState } from '../types/types';
+
+const FormContext = createContext<FormState | {}>({});
 
 export default FormContext;

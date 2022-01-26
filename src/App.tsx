@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useMemo, useReducer } from 'react';
 
 // context
 import FormContext from './context/FormContext';
@@ -8,15 +8,14 @@ import { formReducer, initialFormState } from './reducer/formReducer';
 import MasterForm from './components/MasterForm';
 
 const App = () => {
-	const { Provider } = FormContext;
-
 	const [state, dispatch] = useReducer(formReducer, initialFormState);
 
+	const memoizedContext = useMemo(() => ({ formDispatch: dispatch, formState: state }), []);
+
 	return (
-		<Provider value={{ formState: state, formDispatch: dispatch }}>
-			<h1>Hello from App.tsx!</h1>
+		<FormContext.Provider value={memoizedContext}>
 			<MasterForm />
-		</Provider>
+		</FormContext.Provider>
 	);
 };
 
