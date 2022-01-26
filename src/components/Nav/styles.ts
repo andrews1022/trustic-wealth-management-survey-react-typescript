@@ -1,1 +1,26 @@
 import styled from 'styled-components';
+
+export const Nav = styled.nav`
+	position: absolute;
+	top: 5%;
+	right: 5%;
+
+	@media ${({ theme }) => theme.mediaQueries.tabletPortrait} {
+		padding: 2% 0;
+		position: static;
+	}
+`;
+
+export const List = styled.ul`
+	display: flex;
+
+	@media ${({ theme }) => theme.mediaQueries.tabletPortrait} {
+		justify-content: center;
+	}
+`;
+
+export const Item = styled.li`
+	&:first-of-type {
+		margin-right: 0.5rem;
+	}
+`;

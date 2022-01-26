@@ -1,5 +1,9 @@
 import React from 'react';
 
+// general
+export type Children = React.ReactNode;
+
+// context
 export type FormActions =
 	| { type: 'CLOSE_MODAL' }
 	| { type: 'FORM_IS_SUBMITTED' }
@@ -23,6 +27,7 @@ export type FormContextType = {
 	formDispatch: React.Dispatch<FormActions>;
 };
 
+// data
 export type Option = {
 	forQuestion: number;
 	id: string;
@@ -34,3 +39,7 @@ export type Title = {
 	step: number;
 	title: string;
 };
+
+// ui
+export type ButtonMode = 'hollow' | 'pop' | 'solid';
+export type ButtonSize = 'small' | 'large';

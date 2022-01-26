@@ -1,4 +1,5 @@
-import React, { useMemo, useReducer } from 'react';
+/* eslint-disable react/jsx-no-constructed-context-values */
+import React, { useReducer } from 'react';
 
 // context
 import FormContext from './context/FormContext';
@@ -10,10 +11,8 @@ import MasterForm from './components/MasterForm';
 const App = () => {
 	const [state, dispatch] = useReducer(formReducer, initialFormState);
 
-	const memoizedContext = useMemo(() => ({ formState: state, formDispatch: dispatch }), []);
-
 	return (
-		<FormContext.Provider value={memoizedContext}>
+		<FormContext.Provider value={{ formState: state, formDispatch: dispatch }}>
 			<MasterForm />
 		</FormContext.Provider>
 	);
