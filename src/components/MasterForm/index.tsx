@@ -1,13 +1,13 @@
 import React from 'react';
 
-type FooterProps = {};
+type MasterFormProps = {};
 
-const Footer = (props: FooterProps) => {
+const MasterForm = (props: MasterFormProps) => {
 	return (
 		<div>
-			<h2>Hello from the Footer!</h2>
+			<h2>Hello from the MasterForm!</h2>
 		</div>
 	);
 };
 
-export default Footer;
+export default MasterForm;
