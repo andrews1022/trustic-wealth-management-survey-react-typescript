@@ -62,6 +62,7 @@
 		"react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
 		"react/jsx-indent": ["warn", "tab"],
 		"react/jsx-indent-props": [2, "tab"],
+		"react/jsx-no-useless-fragment": "warn",
 		"react/jsx-one-expression-per-line": "off",
 		"react/jsx-props-no-multi-spaces": "warn",
 		"react/jsx-tag-spacing": "warn",
