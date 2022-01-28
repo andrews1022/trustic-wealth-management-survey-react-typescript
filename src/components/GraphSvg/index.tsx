@@ -1,7 +1,9 @@
 import React from 'react';
 
-const QuestionSvg = () => (
-	<svg
+import * as S from './styles';
+
+const GraphSvg = () => (
+	<S.Wrapper
 		id='e9a400c3-14c4-48e9-ac4d-1e6d0c39fdb5'
 		data-name='Layer 1'
 		xmlns='http://www.w3.org/2000/svg'
@@ -277,7 +279,7 @@ const QuestionSvg = () => (
 		<circle cx='425.5' cy='184.5' r='11' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
 		<circle cx='539.5' cy='121.5' r='11' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
 		<circle cx='653.5' cy='11.5' r='11' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
-	</svg>
+	</S.Wrapper>
 );
 
-export default QuestionSvg;
+export default GraphSvg;

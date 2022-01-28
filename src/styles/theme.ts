@@ -46,6 +46,15 @@ const theme = {
 	},
 	fontSizes: {
 		// add font sizes here
+		// intro - h1, 48px
+		// q1-3 - h2, 48px
+		// results - top heading, h2, 40px
+		// results - sub heading, h3, 28px
+		// results - results group heading, h3, 28px
+		// results - take survey again, h3, 28px
+		small: '1.75rem',
+		medium: '2.5rem',
+		large: '3rem'
 	},
 	spacing: {
 		// add spacing variables here

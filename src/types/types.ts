@@ -43,3 +43,6 @@ export type Title = {
 // ui
 export type ButtonMode = 'hollow' | 'pop' | 'solid';
 export type ButtonSize = 'small' | 'large';
+
+export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type HeadingSize = 'small' | 'medium' | 'large';

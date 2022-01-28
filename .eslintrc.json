@@ -29,7 +29,7 @@
 		"import/newline-after-import": "warn",
 		"import/no-unresolved": "off",
 		"import/order": "warn",
-		"import/prefer-default-export": "warn",
+		"import/prefer-default-export": "off",
 		"indent": "off",
 		"jsx-a11y/heading-has-content": "warn",
 		"jsx-quotes": ["warn", "prefer-single"],

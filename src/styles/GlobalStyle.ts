@@ -39,6 +39,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${fonts.fontPlayfair};
   }
 
+  p {
+    font-size: 1.25rem;
+  }
+
   button,
   input,
   textarea {
