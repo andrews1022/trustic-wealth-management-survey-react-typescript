@@ -15,101 +15,121 @@ import options from '../../../data/options';
 import titles from '../../../data/titles';
 
 // types
-import { Option } from '../../../types/types';
+// import { Option } from '../../../types/types';
 
 const Results = () => {
 	const formContext = useContext(FormContext);
 
-	const wasSelected = (option: Option) =>
-		formContext.formState.checkedOptions.indexOf(option.id) > -1 ? 'selected' : '';
+	// const wasSelected = (option: Option) =>
+	// 	formContext.formState.checkedOptions.indexOf(option.id) > -1 ? 'selected' : '';
 
 	return (
 		<S.Wrapper>
 			<S.InnerWrapper>
 				<S.HeroTextWrapper>
-					<Heading element='h1' size='medium'>
+					<Heading element='h1' size='large'>
 						See how your answers align with other Canadians.
 					</Heading>
 
-					<Heading element='h2' size='small'>
+					<Heading element='h2' size='medium'>
 						Download the complete survey results to get the full picture of what other Canadians
 						selected, or get in touch to start planning.
 					</Heading>
 
-					<p>
-						Below are the answers other Canadian&apos;s selected. The highlighted answers are the
-						ones you also selected.
-					</p>
-
 					<S.SelectionsWrapper>
-						<S.SelectionsBox />
+						<p>
+							Below are the answers other Canadian&apos;s selected. The highlighted answers are the
+							ones you also selected.
+						</p>
 
-						<p>= your selections</p>
+						<S.SelectionsInnerWrapper>
+							<S.SelectionsBox />
+
+							<p>= your selections</p>
+						</S.SelectionsInnerWrapper>
 					</S.SelectionsWrapper>
 				</S.HeroTextWrapper>
 
 				<S.Divider />
 
-				<div className='results__answers'>
-					<h3 className='results__answers-heading'>{titles[0].title}</h3>
-					<ul className='results__answers-list'>
+				<S.AnswersWrapper>
+					<Heading element='h2' size='small'>
+						{titles[1].title}
+					</Heading>
+
+					<S.AnswersList>
 						{options
 							.filter((option) => option.forQuestion === 1)
 							.map((option) => (
-								<li className='results__answers-item' key={option.id}>
-									<span className={`results__answers-text ${wasSelected(option)}`}>
+								<S.AnswersItem key={option.id}>
+									<S.AnswersText
+										isSelected={formContext.formState.checkedOptions.indexOf(option.id) > -1}
+									>
 										{option.questionText}
-									</span>
-									<div
-										className={`results__answers-percent-bar ${wasSelected(option)}`}
-										style={{ width: `${option.percentAnswered}%` }}
+									</S.AnswersText>
+
+									<S.AnswersPercentageBar
+										isSelected={formContext.formState.checkedOptions.indexOf(option.id) > -1}
+										width={option.percentAnswered}
 									/>
-								</li>
+								</S.AnswersItem>
 							))}
-					</ul>
-				</div>
+					</S.AnswersList>
+				</S.AnswersWrapper>
 
 				<S.Divider />
 
-				<div className='results__answers'>
-					<h3 className='results__answers-heading'>{titles[1].title}</h3>
-					<ul className='results__answers-list'>
+				<S.AnswersWrapper>
+					<Heading element='h2' size='small'>
+						{titles[2].title}
+					</Heading>
+
+					<S.AnswersList>
 						{options
 							.filter((option) => option.forQuestion === 2)
 							.map((option) => (
-								<li className='results__answers-item' key={option.id}>
-									<span className={`results__answers-text ${wasSelected(option)}`}>
+								<S.AnswersItem key={option.id}>
+									<S.AnswersText
+										isSelected={formContext.formState.checkedOptions.indexOf(option.id) > -1}
+									>
 										{option.questionText}
-									</span>
-									<div
-										className={`results__answers-percent-bar ${wasSelected(option)}`}
-										style={{ width: `${option.percentAnswered}%` }}
+									</S.AnswersText>
+
+									<S.AnswersPercentageBar
+										isSelected={formContext.formState.checkedOptions.indexOf(option.id) > -1}
+										width={option.percentAnswered}
 									/>
-								</li>
+								</S.AnswersItem>
 							))}
-					</ul>
-				</div>
+					</S.AnswersList>
+				</S.AnswersWrapper>
 
 				<S.Divider />
 
-				<div className='results__answers'>
-					<h3 className='results__answers-heading'>{titles[2].title}</h3>
-					<ul className='results__answers-list'>
+				<S.AnswersWrapper>
+					<Heading element='h2' size='small'>
+						{titles[3].title}
+					</Heading>
+
+					<S.AnswersList>
 						{options
 							.filter((option) => option.forQuestion === 3)
 							.map((option) => (
-								<li className='results__answers-item' key={option.id}>
-									<span className={`results__answers-text ${wasSelected(option)}`}>
+								<S.AnswersItem key={option.id}>
+									<S.AnswersText
+										isSelected={formContext.formState.checkedOptions.indexOf(option.id) > -1}
+									>
 										{option.questionText}
-									</span>
-									<div
-										className={`results__answers-percent-bar ${wasSelected(option)}`}
-										style={{ width: `${option.percentAnswered}%` }}
+									</S.AnswersText>
+
+									<S.AnswersPercentageBar
+										isSelected={formContext.formState.checkedOptions.indexOf(option.id) > -1}
+										width={option.percentAnswered}
 									/>
-								</li>
+								</S.AnswersItem>
 							))}
-					</ul>
-				</div>
+					</S.AnswersList>
+				</S.AnswersWrapper>
 			</S.InnerWrapper>
 
 			<S.Divider />

@@ -17,20 +17,24 @@ export const HeroTextWrapper = styled.header`
 	h2 {
 		margin-bottom: 2%;
 	}
+`;
+
+export const SelectionsWrapper = styled.div`
+	margin: 0 auto;
+	width: 37.5%;
 
 	p {
 		color: ${({ theme }) => theme.colors.lochmara};
 	}
 `;
 
-export const SelectionsWrapper = styled.div`
+export const SelectionsInnerWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 1%;
+	margin-top: 3%;
 
 	@media ${({ theme }) => theme.mediaQueries.mobileLarge} {
-		margin-top: 3%;
 		margin-bottom: 3%;
 	}
 
@@ -61,6 +65,61 @@ export const Divider = styled.div`
 	@media ${({ theme }) => theme.mediaQueries.mobileMedium} {
 		margin: 4% auto;
 	}
+`;
+
+export const AnswersWrapper = styled.div`
+	h2 {
+		margin-bottom: 2%;
+		text-align: center;
+	}
+`;
+
+export const AnswersList = styled.ul`
+	margin: 0 auto;
+	width: 29%;
+
+	@media ${({ theme }) => theme.mediaQueries.desktopSmall} {
+		width: 33%;
+	}
+
+	@media ${({ theme }) => theme.mediaQueries.tabletPortrait} {
+		width: 40%;
+	}
+
+	@media ${({ theme }) => theme.mediaQueries.mobileLarge} {
+		width: 55%;
+	}
+
+	@media ${({ theme }) => theme.mediaQueries.mobileMedium} {
+		width: 100%;
+	}
+`;
+
+export const AnswersItem = styled.li`
+	&:not(:last-of-type) {
+		margin-bottom: 1.25rem;
+	}
+`;
+
+type AnswersTextProps = {
+	isSelected: boolean;
+};
+
+export const AnswersText = styled.span<AnswersTextProps>`
+	color: ${({ isSelected, theme }) =>
+		isSelected ? theme.colors.supernova : theme.colors.gulfBlue};
+`;
+
+type AnswersPercentageBarProps = {
+	isSelected: boolean;
+	width: number;
+};
+
+export const AnswersPercentageBar = styled.div<AnswersPercentageBarProps>`
+	background-color: ${({ isSelected, theme }) =>
+		isSelected ? theme.colors.supernova : theme.colors.gulfBlue};
+	height: 1.25rem;
+	width: ${(props) => props.width}%;
 `;
 
 export const RestartWrapper = styled.div`
