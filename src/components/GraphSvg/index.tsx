@@ -3,7 +3,7 @@ import React from 'react';
 import * as S from './styles';
 
 const GraphSvg = () => (
-	<S.Wrapper
+	<S.GraphSvg
 		id='e9a400c3-14c4-48e9-ac4d-1e6d0c39fdb5'
 		data-name='Layer 1'
 		xmlns='http://www.w3.org/2000/svg'
@@ -279,7 +279,7 @@ const GraphSvg = () => (
 		<circle cx='425.5' cy='184.5' r='11' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
 		<circle cx='539.5' cy='121.5' r='11' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
 		<circle cx='653.5' cy='11.5' r='11' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
-	</S.Wrapper>
+	</S.GraphSvg>
 );
 
 export default GraphSvg;

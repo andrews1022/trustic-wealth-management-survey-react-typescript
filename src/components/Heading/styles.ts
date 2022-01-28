@@ -29,8 +29,8 @@ const setHeadingFontSize = (size: HeadingSize): string => {
 	}
 };
 
-const HeadingStyles = styled.div<HeadingProps>`
+export const Heading = styled.div<HeadingProps>`
 	font-size: ${({ size }) => setHeadingFontSize(size)};
+	line-height: 1.25;
+	margin-bottom: 4%;
 `;
-
-export default HeadingStyles;

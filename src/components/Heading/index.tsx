@@ -1,7 +1,7 @@
 import React from 'react';
 
 // styles
-import HeadingStyles from './styles';
+import * as S from './styles';
 
 // types
 import { Children, HeadingElement, HeadingSize } from '../../types/types';
@@ -13,9 +13,9 @@ type HeadingProps = {
 };
 
 const Heading = ({ children, element, size }: HeadingProps) => (
-	<HeadingStyles as={element} size={size}>
+	<S.Heading as={element} size={size}>
 		{children}
-	</HeadingStyles>
+	</S.Heading>
 );
 
 export default Heading;

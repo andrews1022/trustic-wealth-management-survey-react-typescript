@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 
 // types
@@ -74,6 +72,6 @@ export const Button = styled.button<ButtonProps>`
 	padding: ${(props) => (props.size === 'small' ? '0.5rem 1.25rem' : '1rem 2rem')};
 	transition: all 250ms ease-in-out;
 
-	/* needs to be last to override shared styles */
-	${(props) => setButtonMode(props.mode)}
+	/* needs to be last to override default styles above */
+	${({ mode }) => setButtonMode(mode)}
 `;

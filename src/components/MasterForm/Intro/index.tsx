@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import FormContext from '../../../context/FormContext';
 
 // components
+import Button from '../../Button';
 import Heading from '../../Heading';
 
 // styles
@@ -23,22 +24,22 @@ const Intro = () => {
 
 			<p>Want to find out what they said now? Download the survey results!</p>
 
-			<div className='button-row'>
-				<button
-					className='button button--hollow button--large'
+			<S.ButtonRow>
+				<Button
+					mode='hollow'
 					onClick={() => formContext.formDispatch({ type: 'OPEN_MODAL' })}
-					type='button'
+					size='large'
 				>
 					Download Survey Results
-				</button>
-				<button
-					className='button button--solid button--large'
+				</Button>
+				<Button
+					mode='solid'
 					onClick={() => formContext.formDispatch({ type: 'INCREMENT_CURRENT_STEP' })}
-					type='button'
+					size='large'
 				>
 					Start Survey
-				</button>
-			</div>
+				</Button>
+			</S.ButtonRow>
 		</S.QuestionWrapper>
 	);
 };
