@@ -14,6 +14,9 @@ export const InnerWrapper = styled.div`
 	left: 50%;
 	top: 52.5%;
 	transform: translate(-50%, -50%);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	width: 90%;
 
 	@media ${({ theme }) => theme.mediaQueries.tabletPortrait} {
@@ -21,4 +24,8 @@ export const InnerWrapper = styled.div`
 		transform: translate(0, 0);
 		width: 100%;
 	}
+`;
+
+export const QuestionWrapper = styled.div`
+	flex: 0 0 40%;
 `;
