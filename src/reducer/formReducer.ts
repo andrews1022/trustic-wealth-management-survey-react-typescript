@@ -12,19 +12,31 @@ export const initialFormState: FormState = {
 export const formReducer = (state: FormState, action: FormActions): FormState => {
 	switch (action.type) {
 		case 'CLOSE_MODAL': {
-			return { ...state, isModalOpen: false };
+			return {
+				...state,
+				isModalOpen: false
+			};
 		}
 
 		case 'FORM_IS_SUBMITTED': {
-			return { ...state, formIsSubmitted: true };
+			return {
+				...state,
+				formIsSubmitted: true
+			};
 		}
 
 		case 'FORM_IS_NOT_SUBMITTED': {
-			return { ...state, formIsSubmitted: false };
+			return {
+				...state,
+				formIsSubmitted: false
+			};
 		}
 
 		case 'INCREMENT_CURRENT_STEP': {
-			return { ...state, currentStep: state.currentStep + 1 };
+			return {
+				...state,
+				currentStep: state.currentStep + 1
+			};
 		}
 
 		case 'INCREMENT_CURRENT_STEP_AND_QUESTION': {
@@ -36,11 +48,20 @@ export const formReducer = (state: FormState, action: FormActions): FormState =>
 		}
 
 		case 'OPEN_MODAL': {
-			return { ...state, isModalOpen: true };
+			return {
+				...state,
+				isModalOpen: true
+			};
 		}
 
 		case 'OPTION_CHECKED': {
-			return { ...state, checkedOptions: state.checkedOptions.concat(action.payload) };
+			return {
+				...state,
+				checkedOptions:
+					state.checkedOptions.indexOf(action.payload) === -1
+						? state.checkedOptions.concat(action.payload)
+						: state.checkedOptions.filter((option) => option !== action.payload)
+			};
 		}
 
 		case 'RESTART_SURVEY': {

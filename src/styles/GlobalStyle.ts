@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 
 // destructured theme properties
-const { mediaQueries, fonts } = theme;
+const { colors, fonts, mediaQueries } = theme;
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    color: ${colors.gulfBlue};
     font-family: ${fonts.fontLato};
     line-height: 1;
   }
