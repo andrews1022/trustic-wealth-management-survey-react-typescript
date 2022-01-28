@@ -1,30 +1,34 @@
 import React, { useContext } from 'react';
 
 // context
-import FormContext from '../../../context/FormContext';
+import FormContext from '../../context/FormContext';
 
 // components
-import Button from '../../Button';
-import Heading from '../../Heading';
+import Button from '../Button';
+import Heading from '../Heading';
 
 // styles
-import * as S from '../styles';
+import * as S from './styles';
 
 // data
-import options from '../../../data/options';
-import titles from '../../../data/titles';
+import options from '../../data/options';
+import titles from '../../data/titles';
 
 // constants
-import { FIRST_INDEX } from '../../../constants/constants';
+import { FIRST_INDEX } from '../../constants/constants';
 
-const Question1 = () => {
+type QuestionProps = {
+	stepToRender: number;
+};
+
+const Question = ({ stepToRender }: QuestionProps) => {
 	const formContext = useContext(FormContext);
 
-	return (
+	return formContext.formState.currentStep === stepToRender ? (
 		<S.QuestionWrapper>
 			<S.CurrentQuestion>Question {formContext.formState.currentQuestion}/3</S.CurrentQuestion>
 
-			<Heading element='h2' size='medium'>
+			<Heading element='h2' marginBottom={2} size='medium'>
 				{titles.filter((t) => t.step === formContext.formState.currentStep)[FIRST_INDEX].title}
 			</Heading>
 
@@ -55,7 +59,7 @@ const Question1 = () => {
 				Next Question
 			</Button>
 		</S.QuestionWrapper>
-	);
+	) : null;
 };
 
-export default Question1;
+export default Question;

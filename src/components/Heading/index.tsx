@@ -12,8 +12,8 @@ interface HeadingProps extends StyledHeadingProps {
 	element: HeadingElement;
 }
 
-const Heading = ({ children, element, size }: HeadingProps) => (
-	<S.Heading as={element} size={size}>
+const Heading = ({ children, element, marginBottom, size }: HeadingProps) => (
+	<S.Heading as={element} marginBottom={marginBottom} size={size}>
 		{children}
 	</S.Heading>
 );

@@ -1,20 +1,20 @@
 import React, { useContext } from 'react';
 
 // context
-import FormContext from '../../../context/FormContext';
+import FormContext from '../../context/FormContext';
 
 // components
-import Button from '../../Button';
-import Heading from '../../Heading';
+import Button from '../Button';
+import Heading from '../Heading';
 
 // styles
-import * as S from '../styles';
+import * as S from './styles';
 
 // data
-import titles from '../../../data/titles';
+import titles from '../../data/titles';
 
 // constants
-import { FIRST_INDEX } from '../../../constants/constants';
+import { FIRST_INDEX } from '../../constants/constants';
 
 const Intro = () => {
 	const formContext = useContext(FormContext);
@@ -23,7 +23,7 @@ const Intro = () => {
 
 	return (
 		<S.QuestionWrapper>
-			<Heading element='h1' size='large'>
+			<Heading element='h1' marginBottom={4} size='large'>
 				{titles.filter((t) => t.step === currentStep)[FIRST_INDEX].title}
 			</Heading>
 
