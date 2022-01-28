@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-type Question2Props = {};
+// context
+import FormContext from '../../../context/FormContext';
 
-const Question2 = (props: Question2Props) => {
+// components
+import Button from '../../Button';
+import Heading from '../../Heading';
+
+// styles
+import * as S from '../styles';
+
+// data
+import titles from '../../../data/titles';
+
+// constants
+import { FIRST_INDEX } from '../../../constants/constants';
+
+const Question2 = () => {
+	const formContext = useContext(FormContext);
+
+	const { currentStep } = formContext.formState;
+
 	return (
-		<div>
-			<h2>Hello from the Question2 Component!</h2>
-		</div>
+		<S.QuestionWrapper>
+			<S.CurrentQuestion>Question {formContext.formState.currentQuestion}/3</S.CurrentQuestion>
+
+			<Heading element='h2' size='large'>
+				{titles.filter((t) => t.step === currentStep)[FIRST_INDEX].title}
+			</Heading>
+
+			<Button
+				mode='hollow'
+				onClick={() => formContext.formDispatch({ type: 'INCREMENT_CURRENT_STEP' })}
+				size='large'
+			>
+				Next Question
+			</Button>
+		</S.QuestionWrapper>
 	);
 };
 

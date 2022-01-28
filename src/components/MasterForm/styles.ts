@@ -44,3 +44,7 @@ export const ButtonRow = styled.div`
 		align-items: center;
 	}
 `;
+
+export const CurrentQuestion = styled.p`
+	font-size: 1rem;
+`;

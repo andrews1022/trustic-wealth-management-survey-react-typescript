@@ -13,13 +13,18 @@ import * as S from '../styles';
 // data
 import titles from '../../../data/titles';
 
+// constants
+import { FIRST_INDEX } from '../../../constants/constants';
+
 const Intro = () => {
 	const formContext = useContext(FormContext);
+
+	const { currentStep } = formContext.formState;
 
 	return (
 		<S.QuestionWrapper>
 			<Heading element='h1' size='large'>
-				{titles[titles.map((el) => el.step).indexOf(formContext.formState.currentStep)].title}
+				{titles.filter((t) => t.step === currentStep)[FIRST_INDEX].title}
 			</Heading>
 
 			<p>Want to find out what they said now? Download the survey results!</p>
@@ -32,6 +37,7 @@ const Intro = () => {
 				>
 					Download Survey Results
 				</Button>
+
 				<Button
 					mode='solid'
 					onClick={() => formContext.formDispatch({ type: 'INCREMENT_CURRENT_STEP' })}
