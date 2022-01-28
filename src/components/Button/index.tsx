@@ -4,14 +4,13 @@ import React from 'react';
 import * as S from './styles';
 
 // types
-import { ButtonMode, ButtonSize, Children } from '../../types/types';
+import { Children } from '../../types/types';
+import { StyledButtonProps } from './styles';
 
-type ButtonProps = {
+interface ButtonProps extends StyledButtonProps {
 	children: Children;
-	mode: ButtonMode;
 	onClick: () => void;
-	size: ButtonSize;
-};
+}
 
 const Button = ({ children, mode, onClick, size }: ButtonProps) => (
 	<S.Button mode={mode} size={size} onClick={onClick} type='button'>

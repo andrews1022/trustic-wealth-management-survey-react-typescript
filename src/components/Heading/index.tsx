@@ -4,13 +4,13 @@ import React from 'react';
 import * as S from './styles';
 
 // types
-import { Children, HeadingElement, HeadingSize } from '../../types/types';
+import { Children, HeadingElement } from '../../types/types';
+import { StyledHeadingProps } from './styles';
 
-type HeadingProps = {
+interface HeadingProps extends StyledHeadingProps {
 	children: Children;
 	element: HeadingElement;
-	size: HeadingSize;
-};
+}
 
 const Heading = ({ children, element, size }: HeadingProps) => (
 	<S.Heading as={element} size={size}>

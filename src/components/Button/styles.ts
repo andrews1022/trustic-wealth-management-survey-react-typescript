@@ -3,10 +3,10 @@ import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components
 // types
 import { ButtonMode, ButtonSize } from '../../types/types';
 
-type ButtonProps = {
+export interface StyledButtonProps {
 	mode: ButtonMode;
 	size: ButtonSize;
-};
+}
 
 const setButtonMode = (mode: ButtonMode): FlattenInterpolation<ThemeProps<any>> => {
 	switch (mode) {
@@ -62,7 +62,7 @@ const setButtonMode = (mode: ButtonMode): FlattenInterpolation<ThemeProps<any>> 
 	}
 };
 
-export const Button = styled.button<ButtonProps>`
+export const Button = styled.button<StyledButtonProps>`
 	border: none;
 	border-radius: 3rem;
 	color: ${({ theme }) => theme.colors.gulfBlue};

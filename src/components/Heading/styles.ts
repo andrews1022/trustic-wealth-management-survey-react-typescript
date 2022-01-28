@@ -5,9 +5,9 @@ import theme from '../../styles/theme';
 // types
 import { HeadingSize } from '../../types/types';
 
-type HeadingProps = {
+export interface StyledHeadingProps {
 	size: HeadingSize;
-};
+}
 
 const setHeadingFontSize = (size: HeadingSize): string => {
 	switch (size) {
@@ -29,7 +29,7 @@ const setHeadingFontSize = (size: HeadingSize): string => {
 	}
 };
 
-export const Heading = styled.div<HeadingProps>`
+export const Heading = styled.div<StyledHeadingProps>`
 	font-size: ${({ size }) => setHeadingFontSize(size)};
 	line-height: 1.25;
 	margin-bottom: 4%;
