@@ -1,37 +1,18 @@
+const ANIMATION_DURATION = 0.5;
+const ANIMATION_EASE = 'easeInOut';
+
+const transition = {
+	duration: ANIMATION_DURATION,
+	ease: ANIMATION_EASE
+};
+
 export const fadeInOut = {
-	hidden: {
-		opacity: 0,
-		transition: {
-			duration: 1,
-			ease: 'easeInOut'
-		}
-	},
-	show: {
-		opacity: 1,
-		transition: {
-			duration: 1,
-			ease: 'easeInOut'
-		}
-	},
-	exit: {
-		opacity: 0,
-		transition: {
-			duration: 1,
-			ease: 'easeInOut'
-		}
-	}
+	hidden: { ...transition, opacity: 0 },
+	show: { ...transition, opacity: 1 },
+	exit: { ...transition, opacity: 0 }
 };
 
 export const widthAnim = (percent: number) => ({
-	hidden: {
-		width: 0
-	},
-	show: {
-		width: `${percent}%`,
-		transition: {
-			duration: 0.5,
-			ease: 'easeInOut',
-			staggerChildren: 0.5
-		}
-	}
+	hidden: { ...transition, width: 0 },
+	show: { ...transition, width: `${percent}%` }
 });

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -9,7 +10,7 @@ export const Wrapper = styled.div`
 	}
 `;
 
-export const InnerWrapper = styled.div`
+export const InnerWrapper = styled(motion.div)`
 	position: absolute;
 	left: 50%;
 	top: 52.5%;

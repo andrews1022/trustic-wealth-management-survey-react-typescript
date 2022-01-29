@@ -1,5 +1,9 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
+
 import React, { useReducer } from 'react';
+
+// animations
+import { AnimatePresence } from 'framer-motion';
 
 // context
 import FormContext from './context/FormContext';
@@ -13,7 +17,9 @@ const App = () => {
 
 	return (
 		<FormContext.Provider value={{ formState: state, formDispatch: dispatch }}>
-			<MasterForm />
+			<AnimatePresence exitBeforeEnter>
+				<MasterForm />
+			</AnimatePresence>
 		</FormContext.Provider>
 	);
 };
