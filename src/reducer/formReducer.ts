@@ -4,34 +4,11 @@ import { FormState, FormActions } from '../types/types';
 export const initialFormState: FormState = {
 	checkedOptions: [],
 	currentQuestion: 1,
-	currentStep: 0,
-	formIsSubmitted: false,
-	isModalOpen: false
+	currentStep: 0
 };
 
 export const formReducer = (state: FormState, action: FormActions): FormState => {
 	switch (action.type) {
-		case 'CLOSE_MODAL': {
-			return {
-				...state,
-				isModalOpen: false
-			};
-		}
-
-		case 'FORM_IS_SUBMITTED': {
-			return {
-				...state,
-				formIsSubmitted: true
-			};
-		}
-
-		case 'FORM_IS_NOT_SUBMITTED': {
-			return {
-				...state,
-				formIsSubmitted: false
-			};
-		}
-
 		case 'INCREMENT_CURRENT_STEP': {
 			return {
 				...state,
@@ -44,13 +21,6 @@ export const formReducer = (state: FormState, action: FormActions): FormState =>
 				...state,
 				currentStep: state.currentStep + 1,
 				currentQuestion: state.currentQuestion + 1
-			};
-		}
-
-		case 'OPEN_MODAL': {
-			return {
-				...state,
-				isModalOpen: true
 			};
 		}
 
