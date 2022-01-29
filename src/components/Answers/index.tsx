@@ -13,6 +13,9 @@ import * as S from './styles';
 import options from '../../data/options';
 import titles from '../../data/titles';
 
+// animations
+import { widthAnim } from '../../animations/animations';
+
 type AnswersProps = {
 	index: number;
 };
@@ -37,8 +40,10 @@ const Answers = ({ index }: AnswersProps) => {
 								<S.Text isSelected={isSelected(option.id)}>{option.questionText}</S.Text>
 
 								<S.PercentageBar
+									animate='show'
+									initial='hidden'
 									isSelected={isSelected(option.id)}
-									width={option.percentAnswered}
+									variants={widthAnim(option.percentAnswered)}
 								/>
 							</S.Item>
 						))}

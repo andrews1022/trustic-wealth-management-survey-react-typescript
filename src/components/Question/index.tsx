@@ -17,11 +17,10 @@ import titles from '../../data/titles';
 // constants
 import { FIRST_INDEX } from '../../constants/constants';
 
-type QuestionProps = {
-	stepToRender: number;
-};
+// types
+import { StepToRender } from '../../types/types';
 
-const Question = ({ stepToRender }: QuestionProps) => {
+const Question = ({ stepToRender }: StepToRender) => {
 	const formContext = useContext(FormContext);
 
 	return formContext.formState.currentStep === stepToRender ? (

@@ -6,7 +6,7 @@ import { DividerStyles } from '../../styles/lib';
 export const Wrapper = styled.div``;
 
 export const InnerWrapper = styled.div`
-	padding: 4.25% 5% 0 5%;
+	padding: 4.25% 5%;
 
 	@media ${({ theme }) => theme.mediaQueries.tabletPortrait} {
 		padding: 4.25% 7.5% 0 7.5%;

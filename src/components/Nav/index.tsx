@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 // context
-import FormContext from '../../context/FormContext';
 
 // components
 import Button from '../Button';
@@ -9,34 +8,22 @@ import Button from '../Button';
 // styles
 import * as S from './styles';
 
-const Nav = () => {
-	const formContext = useContext(FormContext);
+const Nav = () => (
+	<S.Nav>
+		<S.List>
+			<S.Item>
+				<Button mode='pop' onClick={() => {}} size='small'>
+					Book an introductory call
+				</Button>
+			</S.Item>
 
-	return (
-		<S.Nav>
-			<S.List>
-				<S.Item>
-					<Button
-						mode='pop'
-						onClick={() => formContext.formDispatch({ type: 'OPEN_MODAL' })}
-						size='small'
-					>
-						Book an introductory call
-					</Button>
-				</S.Item>
-
-				<S.Item>
-					<Button
-						mode='pop'
-						onClick={() => formContext.formDispatch({ type: 'OPEN_MODAL' })}
-						size='small'
-					>
-						Sign up for future retirement insights
-					</Button>
-				</S.Item>
-			</S.List>
-		</S.Nav>
-	);
-};
+			<S.Item>
+				<Button mode='pop' onClick={() => {}} size='small'>
+					Sign up for future retirement insights
+				</Button>
+			</S.Item>
+		</S.List>
+	</S.Nav>
+);
 
 export default Nav;

@@ -1,16 +1,13 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 // shared styles
 import { DividerStyles } from '../../styles/lib';
 
 // props
-interface IsSelected {
+type IsSelected = {
 	isSelected: boolean;
-}
-
-interface PercentageBarProps extends IsSelected {
-	width: number;
-}
+};
 
 // styled components
 export const Wrapper = styled.div`
@@ -51,11 +48,10 @@ export const Text = styled.span<IsSelected>`
 		isSelected ? theme.colors.supernova : theme.colors.gulfBlue};
 `;
 
-export const PercentageBar = styled.div<PercentageBarProps>`
+export const PercentageBar = styled(motion.div)<IsSelected>`
 	background-color: ${({ isSelected, theme }) =>
 		isSelected ? theme.colors.supernova : theme.colors.gulfBlue};
 	height: 1.25rem;
-	width: ${({ width }) => width}%;
 `;
 
 export const RestartWrapper = styled.div`

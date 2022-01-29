@@ -4,7 +4,6 @@ import React, { useContext } from 'react';
 import FormContext from '../../context/FormContext';
 
 // components
-import FormModal from '../FormModal';
 import Intro from '../Intro';
 import Nav from '../Nav';
 import Results from '../Results';
@@ -24,21 +23,16 @@ const MasterForm = () => {
 			<Nav />
 
 			<S.InnerWrapper>
-				{formContext.formState.currentStep === 0 ? <Intro /> : null}
+				<Intro stepToRender={0} />
 				<Question stepToRender={1} />
 				<Question stepToRender={2} />
 				<Question stepToRender={3} />
 
 				<GraphSvg />
 			</S.InnerWrapper>
-
-			<FormModal />
 		</S.Wrapper>
 	) : (
-		<>
-			<Results />
-			<FormModal />
-		</>
+		<Results />
 	);
 };
 

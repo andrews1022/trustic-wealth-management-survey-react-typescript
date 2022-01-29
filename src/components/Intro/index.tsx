@@ -16,12 +16,15 @@ import titles from '../../data/titles';
 // constants
 import { FIRST_INDEX } from '../../constants/constants';
 
-const Intro = () => {
+// types
+import { StepToRender } from '../../types/types';
+
+const Intro = ({ stepToRender }: StepToRender) => {
 	const formContext = useContext(FormContext);
 
 	const { currentStep } = formContext.formState;
 
-	return (
+	return formContext.formState.currentStep === stepToRender ? (
 		<S.QuestionWrapper>
 			<Heading element='h1' marginBottom={4} size='large'>
 				{titles.filter((t) => t.step === currentStep)[FIRST_INDEX].title}
@@ -31,14 +34,6 @@ const Intro = () => {
 
 			<S.ButtonRow>
 				<Button
-					mode='hollow'
-					onClick={() => formContext.formDispatch({ type: 'OPEN_MODAL' })}
-					size='large'
-				>
-					Download Survey Results
-				</Button>
-
-				<Button
 					mode='solid'
 					onClick={() => formContext.formDispatch({ type: 'INCREMENT_CURRENT_STEP' })}
 					size='large'
@@ -47,7 +42,7 @@ const Intro = () => {
 				</Button>
 			</S.ButtonRow>
 		</S.QuestionWrapper>
-	);
+	) : null;
 };
 
 export default Intro;

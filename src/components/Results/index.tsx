@@ -46,21 +46,21 @@ const Results = () => {
 				<Answers index={1} />
 				<Answers index={2} />
 				<Answers index={3} />
+
+				<S.RestartWrapper>
+					<Heading element='h2' marginBottom={2} size='small'>
+						Would you like to take the survey again?
+					</Heading>
+
+					<Button
+						mode='hollow'
+						onClick={() => formContext.formDispatch({ type: 'RESTART_SURVEY' })}
+						size='large'
+					>
+						Take Survey Again
+					</Button>
+				</S.RestartWrapper>
 			</S.InnerWrapper>
-
-			<S.RestartWrapper>
-				<Heading element='h2' marginBottom={2} size='small'>
-					Would you like to take the survey again?
-				</Heading>
-
-				<Button
-					mode='hollow'
-					onClick={() => formContext.formDispatch({ type: 'RESTART_SURVEY' })}
-					size='large'
-				>
-					Take Survey Again
-				</Button>
-			</S.RestartWrapper>
 
 			{/* <Footer /> */}
 		</S.Wrapper>

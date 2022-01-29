@@ -1,4 +1,4 @@
-const fadeInOut = {
+export const fadeInOut = {
 	hidden: {
 		opacity: 0,
 		transition: {
@@ -22,4 +22,16 @@ const fadeInOut = {
 	}
 };
 
-export default fadeInOut;
+export const widthAnim = (percent: number) => ({
+	hidden: {
+		width: 0
+	},
+	show: {
+		width: `${percent}%`,
+		transition: {
+			duration: 0.5,
+			ease: 'easeInOut',
+			staggerChildren: 0.5
+		}
+	}
+});
