@@ -45,9 +45,9 @@ const theme = {
 		black: 900
 	},
 	fontSizes: {
-		small: '1.75rem',
-		medium: '2.5rem',
-		large: '3rem'
+		small: 'clamp(1rem, 5vw, 1.75rem)',
+		medium: 'clamp(1.5rem, 5vw, 2.5rem)',
+		large: 'clamp(2rem, 5vw, 3rem)'
 	}
 };
 

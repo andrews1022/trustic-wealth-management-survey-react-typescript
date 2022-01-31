@@ -42,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     font-size: 1.25rem;
+    line-height: 1.45;
   }
 
   button,

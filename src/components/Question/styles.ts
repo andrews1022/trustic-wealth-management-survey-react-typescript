@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
-export const QuestionWrapper = styled.div`
-	flex: 0 0 47.5%;
+// shared styles
+import { QuestionWrapperStyles } from '../../styles/lib';
+
+export const Wrapper = styled.div`
+	${QuestionWrapperStyles};
 `;
 
 export const CurrentQuestion = styled.p`
 	font-size: 1rem;
 `;
 
-export const QuestionList = styled.ul`
+export const List = styled.ul`
 	display: flex;
 	flex-wrap: wrap;
 	color: ${({ theme }) => theme.colors.gulfBlue};
@@ -19,7 +22,7 @@ export const QuestionList = styled.ul`
 	}
 `;
 
-export const QuestionItem = styled.li`
+export const Item = styled.li`
 	display: flex;
 	align-items: flex-start;
 	flex: 1 1 50%;

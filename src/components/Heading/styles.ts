@@ -35,4 +35,8 @@ export const Heading = styled.div<StyledHeadingProps>`
 	font-size: ${({ size }) => setHeadingFontSize(size)};
 	line-height: 1.25;
 	margin-bottom: ${({ marginBottom }) => marginBottom}%;
+
+	@media ${(props) => props.theme.mediaQueries.tabletPortrait} {
+		margin-bottom: ${({ marginBottom }) => marginBottom * 2}%;
+	}
 `;

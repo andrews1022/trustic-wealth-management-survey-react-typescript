@@ -3,7 +3,11 @@ import styled from 'styled-components';
 // shared styles
 import { DividerStyles } from '../../styles/lib';
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+	@media ${({ theme }) => theme.mediaQueries.tabletPortrait} {
+		margin-bottom: 7.5%;
+	}
+`;
 
 export const InnerWrapper = styled.div`
 	padding: 4.25% 5%;
@@ -20,6 +24,18 @@ export const HeroTextWrapper = styled.header`
 export const SelectionsWrapper = styled.div`
 	margin: 0 auto;
 	width: 37.5%;
+
+	@media ${({ theme }) => theme.mediaQueries.tabletLandscape} {
+		width: 50%;
+	}
+
+	@media ${({ theme }) => theme.mediaQueries.tabletMedium} {
+		width: 75%;
+	}
+
+	@media ${({ theme }) => theme.mediaQueries.tabletPortrait} {
+		width: 100%;
+	}
 
 	p {
 		color: ${({ theme }) => theme.colors.lochmara};

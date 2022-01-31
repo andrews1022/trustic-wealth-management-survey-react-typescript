@@ -8,11 +8,23 @@ export const DividerStyles = css`
 	background-color: ${({ theme }) => theme.colors.gulfBlue};
 	margin: 2.5% auto;
 
+	@media ${({ theme }) => theme.mediaQueries.tabletLandscape} {
+		width: 4rem;
+	}
+
 	@media ${({ theme }) => theme.mediaQueries.tabletPortrait} {
-		@include size(0.25rem, 4rem);
+		margin: 5% auto;
 	}
 
 	@media ${({ theme }) => theme.mediaQueries.mobileMedium} {
-		margin: 4% auto;
+		margin: 10% auto;
+	}
+`;
+
+export const QuestionWrapperStyles = css`
+	flex: 0 0 47.5%;
+
+	@media ${({ theme }) => theme.mediaQueries.tabletLandscape} {
+		text-align: center;
 	}
 `;

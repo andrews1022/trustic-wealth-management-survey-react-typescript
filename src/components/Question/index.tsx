@@ -24,31 +24,30 @@ const Question = ({ stepToRender }: StepToRender) => {
 	const formContext = useContext(FormContext);
 
 	return formContext.formState.currentStep === stepToRender ? (
-		<S.QuestionWrapper>
+		<S.Wrapper>
 			<S.CurrentQuestion>Question {formContext.formState.currentQuestion}/3</S.CurrentQuestion>
 
 			<Heading element='h2' marginBottom={2} size='medium'>
 				{titles.filter((t) => t.step === formContext.formState.currentStep)[FIRST_INDEX].title}
 			</Heading>
 
-			<S.QuestionList>
-				{options.map(
-					(option) =>
-						option.forQuestion === formContext.formState.currentStep && (
-							<S.QuestionItem key={option.id}>
-								<input
-									id={option.id}
-									onChange={(e) =>
-										formContext.formDispatch({ type: 'OPTION_CHECKED', payload: e.target.id })
-									}
-									type='checkbox'
-								/>
+			<S.List>
+				{options.map((option) =>
+					option.forQuestion === formContext.formState.currentStep ? (
+						<S.Item key={option.id}>
+							<input
+								id={option.id}
+								onChange={(e) =>
+									formContext.formDispatch({ type: 'OPTION_CHECKED', payload: e.target.id })
+								}
+								type='checkbox'
+							/>
 
-								<label htmlFor={option.id}>{option.questionText}</label>
-							</S.QuestionItem>
-						)
+							<label htmlFor={option.id}>{option.questionText}</label>
+						</S.Item>
+					) : null
 				)}
-			</S.QuestionList>
+			</S.List>
 
 			<Button
 				mode='hollow'
@@ -57,7 +56,7 @@ const Question = ({ stepToRender }: StepToRender) => {
 			>
 				Next Question
 			</Button>
-		</S.QuestionWrapper>
+		</S.Wrapper>
 	) : null;
 };
 

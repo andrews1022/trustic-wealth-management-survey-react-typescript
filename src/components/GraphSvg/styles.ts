@@ -38,4 +38,8 @@ export const Bar = styled.rect<BarProps>`
 
 export const GraphSvg = styled.svg`
 	flex: 0 0 50%;
+
+	@media ${(props) => props.theme.mediaQueries.tabletLandscape} {
+		margin-bottom: 5%;
+	}
 `;
