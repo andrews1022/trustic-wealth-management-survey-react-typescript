@@ -1,4 +1,7 @@
-import { Title } from '../types/types';
+type Title = {
+	step: number;
+	title: string;
+};
 
 const titles: Title[] = [
 	{

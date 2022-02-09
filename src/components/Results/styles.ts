@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-// shared styles
-import { DividerStyles } from '../../styles/lib';
-
 export const Wrapper = styled.div`
 	@media ${({ theme }) => theme.mediaQueries.tabletPortrait} {
 		margin-bottom: 7.5%;
@@ -64,10 +61,6 @@ export const SelectionsBox = styled.div`
 	width: 1.125rem;
 	background-color: ${({ theme }) => theme.colors.supernova};
 	margin-right: 0.25rem;
-`;
-
-export const Divider = styled.div`
-	${DividerStyles};
 `;
 
 export const RestartWrapper = styled.div`

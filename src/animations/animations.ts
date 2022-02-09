@@ -7,12 +7,27 @@ const transition = {
 };
 
 export const fadeInOut = {
-	hidden: { ...transition, opacity: 0 },
-	show: { ...transition, opacity: 1 },
-	exit: { ...transition, opacity: 0 }
+	hidden: {
+		...transition,
+		opacity: 0
+	},
+	show: {
+		...transition,
+		opacity: 1
+	},
+	exit: {
+		...transition,
+		opacity: 0
+	}
 };
 
 export const widthAnim = (percent: number) => ({
-	hidden: { ...transition, width: 0 },
-	show: { ...transition, width: `${percent}%` }
+	hidden: {
+		...transition,
+		width: 0
+	},
+	show: {
+		...transition,
+		width: `${percent}%`
+	}
 });

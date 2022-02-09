@@ -1,9 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-// shared styles
-import { DividerStyles } from '../../styles/lib';
-
 // props
 type IsSelected = {
 	isSelected: boolean;
@@ -56,8 +53,4 @@ export const PercentageBar = styled(motion.div)<IsSelected>`
 
 export const RestartWrapper = styled.div`
 	text-align: center;
-`;
-
-export const Divider = styled.div`
-	${DividerStyles};
 `;

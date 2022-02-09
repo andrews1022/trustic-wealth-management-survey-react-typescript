@@ -1,4 +1,9 @@
-import { Option } from '../types/types';
+type Option = {
+	forQuestion: number;
+	id: string;
+	percentAnswered: number;
+	questionText: string;
+};
 
 const options: Option[] = [
 	{

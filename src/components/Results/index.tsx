@@ -5,24 +5,30 @@ import FormContext from '../../context/FormContext';
 
 // components
 import Answers from '../Answers';
-import Button from '../Button';
-import Heading from '../Heading';
 
-// styles
+// styled components
 import * as S from './styles';
+import { Button } from '../UI/Button';
+import { Divider } from '../UI/Divider';
+import { Heading } from '../UI/Heading';
 
 const Results = () => {
 	const formContext = useContext(FormContext);
+
+	// event functions
+	const restartSurveyHandler = () => {
+		formContext.formDispatch({ type: 'RESTART_SURVEY' });
+	};
 
 	return (
 		<S.Wrapper>
 			<S.InnerWrapper>
 				<S.HeroTextWrapper>
-					<Heading element='h1' marginBottom={2} size='large'>
+					<Heading as='h1' marginBottom={2} size='large'>
 						See how your answers align with other Canadians.
 					</Heading>
 
-					<Heading element='h2' marginBottom={2} size='medium'>
+					<Heading as='h2' marginBottom={2} size='medium'>
 						Download the complete survey results to get the full picture of what other Canadians
 						selected, or get in touch to start planning.
 					</Heading>
@@ -41,28 +47,22 @@ const Results = () => {
 					</S.SelectionsWrapper>
 				</S.HeroTextWrapper>
 
-				<S.Divider />
+				<Divider />
 
 				<Answers index={1} />
 				<Answers index={2} />
 				<Answers index={3} />
 
 				<S.RestartWrapper>
-					<Heading element='h2' marginBottom={2} size='small'>
+					<Heading as='h2' marginBottom={2} size='small'>
 						Would you like to take the survey again?
 					</Heading>
 
-					<Button
-						mode='hollow'
-						onClick={() => formContext.formDispatch({ type: 'RESTART_SURVEY' })}
-						size='large'
-					>
+					<Button mode='hollow' onClick={restartSurveyHandler} size='large' type='button'>
 						Take Survey Again
 					</Button>
 				</S.RestartWrapper>
 			</S.InnerWrapper>
-
-			{/* <Footer /> */}
 		</S.Wrapper>
 	);
 };

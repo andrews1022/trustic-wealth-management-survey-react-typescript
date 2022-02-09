@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-// shared styles
-import { QuestionWrapperStyles } from '../../styles/lib';
-
-export const Wrapper = styled.div`
-	${QuestionWrapperStyles};
-`;
-
 export const CurrentQuestion = styled.p`
 	font-size: 1rem;
 `;

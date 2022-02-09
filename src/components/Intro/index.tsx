@@ -3,12 +3,11 @@ import React, { useContext } from 'react';
 // context
 import FormContext from '../../context/FormContext';
 
-// components
-import Button from '../Button';
-import Heading from '../Heading';
-
-// styles
+// styled components
 import * as S from './styles';
+import { Button } from '../UI/Button';
+import { Heading } from '../UI/Heading';
+import { Wrapper } from '../UI/Wrapper';
 
 // data
 import titles from '../../data/titles';
@@ -22,26 +21,28 @@ import { StepToRender } from '../../types/types';
 const Intro = ({ stepToRender }: StepToRender) => {
 	const formContext = useContext(FormContext);
 
+	// destructure currentStep for cleaner jsx
 	const { currentStep } = formContext.formState;
 
-	return formContext.formState.currentStep === stepToRender ? (
-		<S.QuestionWrapper>
-			<Heading element='h1' marginBottom={4} size='large'>
+	// event functions
+	const incrementStepHandler = () => {
+		formContext.formDispatch({ type: 'INCREMENT_CURRENT_STEP' });
+	};
+
+	return currentStep === stepToRender ? (
+		<Wrapper>
+			<Heading as='h1' marginBottom={4} size='large'>
 				{titles.filter((t) => t.step === currentStep)[FIRST_INDEX].title}
 			</Heading>
 
 			<p>Want to find out what they said now? Download the survey results!</p>
 
 			<S.ButtonRow>
-				<Button
-					mode='solid'
-					onClick={() => formContext.formDispatch({ type: 'INCREMENT_CURRENT_STEP' })}
-					size='large'
-				>
+				<Button mode='solid' onClick={incrementStepHandler} size='large' type='button'>
 					Start Survey
 				</Button>
 			</S.ButtonRow>
-		</S.QuestionWrapper>
+		</Wrapper>
 	) : null;
 };
 

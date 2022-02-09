@@ -3,11 +3,10 @@ import React, { useContext } from 'react';
 // context
 import FormContext from '../../context/FormContext';
 
-// components
-import Heading from '../Heading';
-
-// styles
+// styled components
 import * as S from './styles';
+import { Divider } from '../UI/Divider';
+import { Heading } from '../UI/Heading';
 
 // data
 import options from '../../data/options';
@@ -16,6 +15,7 @@ import titles from '../../data/titles';
 // animations
 import { widthAnim } from '../../animations/animations';
 
+// props
 type AnswersProps = {
 	index: number;
 };
@@ -28,7 +28,7 @@ const Answers = ({ index }: AnswersProps) => {
 	return (
 		<>
 			<S.Wrapper>
-				<Heading element='h2' marginBottom={2} size='small'>
+				<Heading as='h2' marginBottom={2} size='small'>
 					{titles[index].title}
 				</Heading>
 
@@ -50,7 +50,7 @@ const Answers = ({ index }: AnswersProps) => {
 				</S.List>
 			</S.Wrapper>
 
-			<S.Divider />
+			<Divider />
 		</>
 	);
 };

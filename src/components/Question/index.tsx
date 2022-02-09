@@ -1,14 +1,13 @@
-import React, { useContext } from 'react';
+import React, { ChangeEvent, useContext } from 'react';
 
 // context
 import FormContext from '../../context/FormContext';
 
-// components
-import Button from '../Button';
-import Heading from '../Heading';
-
-// styles
+// styled components
 import * as S from './styles';
+import { Button } from '../UI/Button';
+import { Heading } from '../UI/Heading';
+import { Wrapper } from '../UI/Wrapper';
 
 // data
 import options from '../../data/options';
@@ -23,25 +22,31 @@ import { StepToRender } from '../../types/types';
 const Question = ({ stepToRender }: StepToRender) => {
 	const formContext = useContext(FormContext);
 
-	return formContext.formState.currentStep === stepToRender ? (
-		<S.Wrapper>
-			<S.CurrentQuestion>Question {formContext.formState.currentQuestion}/3</S.CurrentQuestion>
+	// destructure currentStep for cleaner jsx
+	const { currentQuestion, currentStep } = formContext.formState;
 
-			<Heading element='h2' marginBottom={2} size='medium'>
-				{titles.filter((t) => t.step === formContext.formState.currentStep)[FIRST_INDEX].title}
+	// event functions
+	const incrementStepAndQuestionHandler = () => {
+		formContext.formDispatch({ type: 'INCREMENT_CURRENT_STEP_AND_QUESTION' });
+	};
+
+	const optionCheckedHandler = (event: ChangeEvent<HTMLInputElement>) => {
+		formContext.formDispatch({ type: 'OPTION_CHECKED', payload: event.target.id });
+	};
+
+	return currentStep === stepToRender ? (
+		<Wrapper>
+			<S.CurrentQuestion>Question {currentQuestion}/3</S.CurrentQuestion>
+
+			<Heading as='h2' marginBottom={2} size='medium'>
+				{titles.filter((t) => t.step === currentStep)[FIRST_INDEX].title}
 			</Heading>
 
 			<S.List>
 				{options.map((option) =>
-					option.forQuestion === formContext.formState.currentStep ? (
+					option.forQuestion === currentStep ? (
 						<S.Item key={option.id}>
-							<input
-								id={option.id}
-								onChange={(e) =>
-									formContext.formDispatch({ type: 'OPTION_CHECKED', payload: e.target.id })
-								}
-								type='checkbox'
-							/>
+							<input id={option.id} onChange={optionCheckedHandler} type='checkbox' />
 
 							<label htmlFor={option.id}>{option.questionText}</label>
 						</S.Item>
@@ -49,14 +54,10 @@ const Question = ({ stepToRender }: StepToRender) => {
 				)}
 			</S.List>
 
-			<Button
-				mode='hollow'
-				onClick={() => formContext.formDispatch({ type: 'INCREMENT_CURRENT_STEP_AND_QUESTION' })}
-				size='large'
-			>
+			<Button mode='hollow' onClick={incrementStepAndQuestionHandler} size='large' type='button'>
 				Next Question
 			</Button>
-		</S.Wrapper>
+		</Wrapper>
 	) : null;
 };
 

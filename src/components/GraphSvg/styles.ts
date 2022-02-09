@@ -32,13 +32,14 @@ type BarProps = {
 };
 
 export const Bar = styled.rect<BarProps>`
-	fill: ${(props) => setBarFillColor(props.currentStep)};
+	fill: ${({ currentStep }) => setBarFillColor(currentStep)};
 	transition: fill 250ms ease-in-out;
 `;
 
 export const GraphSvg = styled.svg`
 	flex: 0 0 50%;
 
+	/* NOTE: cannot use destructuring here as theme is defined */
 	@media ${(props) => props.theme.mediaQueries.tabletLandscape} {
 		margin-bottom: 5%;
 	}

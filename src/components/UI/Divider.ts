@@ -1,8 +1,6 @@
-// a library of re-usable styled components / base styles to be used anywhere in the project
+import styled from 'styled-components';
 
-import { css } from 'styled-components';
-
-export const DividerStyles = css`
+export const Divider = styled.div`
 	height: 0.125rem;
 	width: 3rem;
 	background-color: ${({ theme }) => theme.colors.gulfBlue};
@@ -18,13 +16,5 @@ export const DividerStyles = css`
 
 	@media ${({ theme }) => theme.mediaQueries.mobileMedium} {
 		margin: 10% auto;
-	}
-`;
-
-export const QuestionWrapperStyles = css`
-	flex: 0 0 47.5%;
-
-	@media ${({ theme }) => theme.mediaQueries.tabletLandscape} {
-		text-align: center;
 	}
 `;

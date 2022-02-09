@@ -1,10 +1,12 @@
 import styled from 'styled-components';
-
-// theme
 import theme from '../../styles/theme';
 
-// types
-import { HeadingSize } from '../../types/types';
+type HeadingSize = 'small' | 'medium' | 'large';
+
+type HeadingProps = {
+	marginBottom: number;
+	size: HeadingSize;
+};
 
 const setHeadingFontSize = (size: HeadingSize): string => {
 	switch (size) {
@@ -26,12 +28,8 @@ const setHeadingFontSize = (size: HeadingSize): string => {
 	}
 };
 
-export interface StyledHeadingProps {
-	marginBottom: number;
-	size: HeadingSize;
-}
-
-export const Heading = styled.div<StyledHeadingProps>`
+// NOTE: make sure to use the as='' prop for dynamic heading elements!
+export const Heading = styled.div<HeadingProps>`
 	font-size: ${({ size }) => setHeadingFontSize(size)};
 	line-height: 1.25;
 	margin-bottom: ${({ marginBottom }) => marginBottom}%;

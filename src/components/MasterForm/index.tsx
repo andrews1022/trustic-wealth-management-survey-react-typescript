@@ -10,7 +10,7 @@ import Nav from '../Nav';
 import Question from '../Question';
 import Results from '../Results';
 
-// styles
+// styled components
 import * as S from './styles';
 
 // svgs
@@ -22,7 +22,10 @@ import { fadeInOut } from '../../animations/animations';
 const MasterForm = () => {
 	const formContext = useContext(FormContext);
 
-	return formContext.formState.currentStep !== 4 ? (
+	// destructure currentStep for cleaner jsx
+	const { currentStep } = formContext.formState;
+
+	return currentStep !== 4 ? (
 		<S.Wrapper>
 			<Nav />
 
@@ -31,7 +34,7 @@ const MasterForm = () => {
 					animate='show'
 					exit='exit'
 					initial='hidden'
-					key={formContext.formState.currentStep}
+					key={currentStep}
 					variants={fadeInOut}
 				>
 					<Intro stepToRender={0} />

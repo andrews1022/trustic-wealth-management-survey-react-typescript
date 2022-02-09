@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     color: ${colors.gulfBlue};
-    font-family: ${fonts.fontLato};
+    font-family: ${fonts.lato};
     line-height: 1;
   }
 
@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-family: ${fonts.fontPlayfair};
+    font-family: ${fonts.playfair};
   }
 
   p {
@@ -48,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
   button,
   input,
   textarea {
-    font-family: ${fonts.fontLato};
+    font-family: ${fonts.lato};
   }
 
   img,

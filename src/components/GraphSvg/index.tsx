@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 // context
 import FormContext from '../../context/FormContext';
 
-// styles
+// styled components
 import * as S from './styles';
 
 const GraphSvg = () => {

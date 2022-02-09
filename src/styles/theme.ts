@@ -30,8 +30,8 @@ const theme = {
 		gulfBlue: '#384160'
 	},
 	fonts: {
-		fontLato: "'Lato', sans-serif",
-		fontPlayfair: "'Playfair Display', serif"
+		lato: "'Lato', sans-serif",
+		playfair: "'Playfair Display', serif"
 	},
 	fontWeights: {
 		thin: 100,

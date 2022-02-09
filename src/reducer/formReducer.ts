@@ -1,5 +1,16 @@
-// types
-import { FormState, FormActions } from '../types/types';
+/* eslint-disable default-param-last */
+
+export type FormState = {
+	checkedOptions: string[];
+	currentQuestion: number;
+	currentStep: number;
+};
+
+export type FormActions =
+	| { type: 'INCREMENT_CURRENT_STEP' }
+	| { type: 'INCREMENT_CURRENT_STEP_AND_QUESTION' }
+	| { type: 'OPTION_CHECKED'; payload: string }
+	| { type: 'RESTART_SURVEY' };
 
 export const initialFormState: FormState = {
 	checkedOptions: [],
@@ -7,7 +18,10 @@ export const initialFormState: FormState = {
 	currentStep: 0
 };
 
-export const formReducer = (state: FormState, action: FormActions): FormState => {
+export const formReducer = (
+	state: FormState = initialFormState,
+	action: FormActions
+): FormState => {
 	switch (action.type) {
 		case 'INCREMENT_CURRENT_STEP': {
 			return {

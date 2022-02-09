@@ -1,11 +1,18 @@
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 
 // types
-import { ButtonMode, ButtonSize } from '../../types/types';
+type ButtonMode = 'hollow' | 'pop' | 'solid';
+type ButtonSize = 'small' | 'large';
+
+// props
+type ButtonProps = {
+	mode: ButtonMode;
+	size: ButtonSize;
+};
 
 const setButtonMode = (mode: ButtonMode): FlattenInterpolation<ThemeProps<any>> => {
 	switch (mode) {
-		case 'hollow':
+		case 'hollow': {
 			return css`
 				background-color: transparent;
 				border: 0.125rem solid ${({ theme }) => theme.colors.gulfBlue};
@@ -21,8 +28,9 @@ const setButtonMode = (mode: ButtonMode): FlattenInterpolation<ThemeProps<any>> 
 					transform: translateY(-0.25rem);
 				}
 			`;
+		}
 
-		case 'pop':
+		case 'pop': {
 			return css`
 				background-color: transparent;
 
@@ -35,8 +43,9 @@ const setButtonMode = (mode: ButtonMode): FlattenInterpolation<ThemeProps<any>> 
 					transform: translateY(-0.25rem);
 				}
 			`;
+		}
 
-		case 'solid':
+		case 'solid': {
 			return css`
 				background-color: ${({ theme }) => theme.colors.supernova};
 				border: 0.125rem solid transparent;
@@ -44,25 +53,21 @@ const setButtonMode = (mode: ButtonMode): FlattenInterpolation<ThemeProps<any>> 
 				&:hover,
 				&:active,
 				&:focus {
-					/* background-color: darken($supernova, 10%); */
 					box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
 					color: ${({ theme }) => theme.colors.gulfBlue};
 					outline: none;
 					transform: translateY(-0.25rem);
 				}
 			`;
+		}
 
-		default:
+		default: {
 			return css``;
+		}
 	}
 };
 
-export interface StyledButtonProps {
-	mode: ButtonMode;
-	size: ButtonSize;
-}
-
-export const Button = styled.button<StyledButtonProps>`
+export const Button = styled.button<ButtonProps>`
 	border: none;
 	border-radius: 3rem;
 	color: ${({ theme }) => theme.colors.gulfBlue};
