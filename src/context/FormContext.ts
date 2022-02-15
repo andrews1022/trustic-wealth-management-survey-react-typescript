@@ -1,5 +1,5 @@
-import { createContext, Dispatch } from 'react';
-import { FormActions, FormState, initialFormState } from '../reducer/formReducer';
+import { createContext, type Dispatch } from 'react';
+import { initialFormState, type FormActions, type FormState } from '../reducer/formReducer';
 
 // context
 type FormContextType = {

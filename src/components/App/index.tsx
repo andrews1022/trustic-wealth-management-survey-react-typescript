@@ -6,11 +6,11 @@ import React, { useReducer } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 // context
-import FormContext from './context/FormContext';
-import { formReducer, initialFormState } from './reducer/formReducer';
+import FormContext from '../../context/FormContext';
+import { formReducer, initialFormState } from '../../reducer/formReducer';
 
 // components
-import MasterForm from './components/MasterForm';
+import MasterForm from '../MasterForm';
 
 const App = () => {
 	const [state, dispatch] = useReducer(formReducer, initialFormState);

@@ -16,7 +16,7 @@ import titles from '../../data/titles';
 import { FIRST_INDEX } from '../../constants/constants';
 
 // types
-import { StepToRender } from '../../types/types';
+import { type StepToRender } from '../../types/types';
 
 const Intro = ({ stepToRender }: StepToRender) => {
 	const formContext = useContext(FormContext);

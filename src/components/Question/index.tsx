@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext } from 'react';
+import React, { useContext, type ChangeEvent } from 'react';
 
 // context
 import FormContext from '../../context/FormContext';
@@ -17,7 +17,7 @@ import titles from '../../data/titles';
 import { FIRST_INDEX } from '../../constants/constants';
 
 // types
-import { StepToRender } from '../../types/types';
+import { type StepToRender } from '../../types/types';
 
 const Question = ({ stepToRender }: StepToRender) => {
 	const formContext = useContext(FormContext);

@@ -1,4 +1,4 @@
-import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
+import styled, { css, type FlattenInterpolation, type ThemeProps } from 'styled-components';
 
 // types
 type ButtonMode = 'hollow' | 'pop' | 'solid';

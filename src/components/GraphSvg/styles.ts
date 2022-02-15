@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // theme
 import theme from '../../styles/theme';
 
-const setBarFillColor = (currentStep: number) => {
+const setBarFillColor = (currentStep: number): string => {
 	switch (currentStep) {
 		case 0: {
 			return theme.colors.purpleHeart;

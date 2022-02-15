@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import FormContext from '../../context/FormContext';
 
 // components
+import GraphSvg from '../GraphSvg';
 import Intro from '../Intro';
 import Nav from '../Nav';
 import Question from '../Question';
@@ -12,9 +13,6 @@ import Results from '../Results';
 
 // styled components
 import * as S from './styles';
-
-// svgs
-import GraphSvg from '../GraphSvg';
 
 // animations
 import { fadeInOut } from '../../animations/animations';
