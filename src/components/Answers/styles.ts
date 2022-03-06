@@ -3,54 +3,54 @@ import styled from 'styled-components';
 
 // props
 type IsSelected = {
-	isSelected: boolean;
+  isSelected: boolean;
 };
 
 // styled components
 export const Wrapper = styled.div`
-	h2 {
-		text-align: center;
-	}
+  h2 {
+    text-align: center;
+  }
 `;
 
 export const List = styled.ul`
-	margin: 0 auto;
-	width: 29%;
+  margin: 0 auto;
+  width: 29%;
 
-	@media ${({ theme }) => theme.mediaQueries.desktopSmall} {
-		width: 33%;
-	}
+  @media ${({ theme }) => theme.mediaQueries.desktopSmall} {
+    width: 33%;
+  }
 
-	@media ${({ theme }) => theme.mediaQueries.tabletPortrait} {
-		width: 40%;
-	}
+  @media ${({ theme }) => theme.mediaQueries.tabletPortrait} {
+    width: 40%;
+  }
 
-	@media ${({ theme }) => theme.mediaQueries.mobileLarge} {
-		width: 55%;
-	}
+  @media ${({ theme }) => theme.mediaQueries.mobileLarge} {
+    width: 55%;
+  }
 
-	@media ${({ theme }) => theme.mediaQueries.mobileMedium} {
-		width: 100%;
-	}
+  @media ${({ theme }) => theme.mediaQueries.mobileMedium} {
+    width: 100%;
+  }
 `;
 
 export const Item = styled.li`
-	&:not(:last-of-type) {
-		margin-bottom: 1.25rem;
-	}
+  &:not(:last-of-type) {
+    margin-bottom: 1.25rem;
+  }
 `;
 
 export const Text = styled.span<IsSelected>`
-	color: ${({ isSelected, theme }) =>
-		isSelected ? theme.colors.supernova : theme.colors.gulfBlue};
+  color: ${({ isSelected, theme }) =>
+    isSelected ? theme.colors.supernova : theme.colors.gulfBlue};
 `;
 
 export const PercentageBar = styled(motion.div)<IsSelected>`
-	background-color: ${({ isSelected, theme }) =>
-		isSelected ? theme.colors.supernova : theme.colors.gulfBlue};
-	height: 1.25rem;
+  background-color: ${({ isSelected, theme }) =>
+    isSelected ? theme.colors.supernova : theme.colors.gulfBlue};
+  height: 1.25rem;
 `;
 
 export const RestartWrapper = styled.div`
-	text-align: center;
+  text-align: center;
 `;

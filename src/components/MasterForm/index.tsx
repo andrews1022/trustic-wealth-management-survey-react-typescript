@@ -18,35 +18,35 @@ import * as S from './styles';
 import { fadeInOut } from '../../animations/animations';
 
 const MasterForm = () => {
-	const formContext = useContext(FormContext);
+  const formContext = useContext(FormContext);
 
-	// destructure currentStep for cleaner jsx
-	const { currentStep } = formContext.formState;
+  // destructure currentStep for cleaner jsx
+  const { currentStep } = formContext.formState;
 
-	return currentStep !== 4 ? (
-		<S.Wrapper>
-			<Nav />
+  return currentStep !== 4 ? (
+    <S.Wrapper>
+      <Nav />
 
-			<S.InnerWrapper>
-				<motion.div
-					animate='show'
-					exit='exit'
-					initial='hidden'
-					key={currentStep}
-					variants={fadeInOut}
-				>
-					<Intro stepToRender={0} />
-					<Question stepToRender={1} />
-					<Question stepToRender={2} />
-					<Question stepToRender={3} />
-				</motion.div>
+      <S.InnerWrapper>
+        <motion.div
+          animate='show'
+          exit='exit'
+          initial='hidden'
+          key={currentStep}
+          variants={fadeInOut}
+        >
+          <Intro stepToRender={0} />
+          <Question stepToRender={1} />
+          <Question stepToRender={2} />
+          <Question stepToRender={3} />
+        </motion.div>
 
-				<GraphSvg />
-			</S.InnerWrapper>
-		</S.Wrapper>
-	) : (
-		<Results />
-	);
+        <GraphSvg />
+      </S.InnerWrapper>
+    </S.Wrapper>
+  ) : (
+    <Results />
+  );
 };
 
 export default MasterForm;

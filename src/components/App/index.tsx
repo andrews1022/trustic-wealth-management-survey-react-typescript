@@ -13,15 +13,15 @@ import { formReducer, initialFormState } from '../../reducer/formReducer';
 import MasterForm from '../MasterForm';
 
 const App = () => {
-	const [state, dispatch] = useReducer(formReducer, initialFormState);
+  const [state, dispatch] = useReducer(formReducer, initialFormState);
 
-	return (
-		<FormContext.Provider value={{ formState: state, formDispatch: dispatch }}>
-			<AnimatePresence exitBeforeEnter>
-				<MasterForm />
-			</AnimatePresence>
-		</FormContext.Provider>
-	);
+  return (
+    <FormContext.Provider value={{ formState: state, formDispatch: dispatch }}>
+      <AnimatePresence exitBeforeEnter>
+        <MasterForm />
+      </AnimatePresence>
+    </FormContext.Provider>
+  );
 };
 
 export default App;

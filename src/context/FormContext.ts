@@ -3,13 +3,13 @@ import { initialFormState, type FormActions, type FormState } from '../reducer/f
 
 // context
 type FormContextType = {
-	formState: FormState;
-	formDispatch: Dispatch<FormActions>;
+  formState: FormState;
+  formDispatch: Dispatch<FormActions>;
 };
 
 const FormContext = createContext<FormContextType>({
-	formState: initialFormState,
-	formDispatch: () => null
+  formState: initialFormState,
+  formDispatch: () => null
 });
 
 export default FormContext;

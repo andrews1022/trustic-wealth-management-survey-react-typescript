@@ -17,42 +17,42 @@ import { widthAnim } from '../../animations/animations';
 
 // props
 type AnswersProps = {
-	index: number;
+  index: number;
 };
 
 const Answers = ({ index }: AnswersProps) => {
-	const formContext = useContext(FormContext);
+  const formContext = useContext(FormContext);
 
-	const isSelected = (id: string) => formContext.formState.checkedOptions.indexOf(id) > -1;
+  const isSelected = (id: string) => formContext.formState.checkedOptions.indexOf(id) > -1;
 
-	return (
-		<>
-			<S.Wrapper>
-				<Heading as='h2' marginBottom={2} size='small'>
-					{titles[index].title}
-				</Heading>
+  return (
+    <>
+      <S.Wrapper>
+        <Heading as='h2' marginBottom={2} size='small'>
+          {titles[index].title}
+        </Heading>
 
-				<S.List>
-					{options
-						.filter((option) => option.forQuestion === index)
-						.map((option) => (
-							<S.Item key={option.id}>
-								<S.Text isSelected={isSelected(option.id)}>{option.questionText}</S.Text>
+        <S.List>
+          {options
+            .filter((option) => option.forQuestion === index)
+            .map((option) => (
+              <S.Item key={option.id}>
+                <S.Text isSelected={isSelected(option.id)}>{option.questionText}</S.Text>
 
-								<S.PercentageBar
-									animate='show'
-									initial='hidden'
-									isSelected={isSelected(option.id)}
-									variants={widthAnim(option.percentAnswered)}
-								/>
-							</S.Item>
-						))}
-				</S.List>
-			</S.Wrapper>
+                <S.PercentageBar
+                  animate='show'
+                  initial='hidden'
+                  isSelected={isSelected(option.id)}
+                  variants={widthAnim(option.percentAnswered)}
+                />
+              </S.Item>
+            ))}
+        </S.List>
+      </S.Wrapper>
 
-			<Divider />
-		</>
-	);
+      <Divider />
+    </>
+  );
 };
 
 export default Answers;
