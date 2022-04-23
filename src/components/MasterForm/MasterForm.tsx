@@ -1,8 +1,4 @@
-import { useContext } from 'react';
 import { motion } from 'framer-motion';
-
-// context
-import FormContext from '../../context/FormContext';
 
 // components
 import GraphSvg from '../GraphSvg/GraphSvg';
@@ -11,6 +7,9 @@ import Nav from '../Nav/Nav';
 import Question from '../Question/Question';
 import Results from '../Results/Results';
 
+// custom hooks
+import useForm from '../../hooks/useForm';
+
 // styled components
 import * as S from './MasterForm.styles';
 
@@ -18,12 +17,9 @@ import * as S from './MasterForm.styles';
 import { fadeInOut } from '../../animations/animations';
 
 const MasterForm = () => {
-  const formContext = useContext(FormContext);
+  const [state] = useForm();
 
-  // destructure currentStep for cleaner jsx
-  const { currentStep } = formContext.formState;
-
-  return currentStep !== 4 ? (
+  return state.currentStep !== 4 ? (
     <S.Wrapper>
       <Nav />
 
@@ -32,7 +28,7 @@ const MasterForm = () => {
           animate='show'
           exit='exit'
           initial='hidden'
-          key={currentStep}
+          key={state.currentStep}
           variants={fadeInOut}
         >
           <Intro stepToRender={0} />

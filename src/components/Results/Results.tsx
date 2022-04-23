@@ -1,7 +1,5 @@
-import { useContext } from 'react';
-
-// context
-import FormContext from '../../context/FormContext';
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 // components
 import Answers from '../Answers/Answers';
@@ -12,12 +10,15 @@ import { Button } from '../UI/Button';
 import { Divider } from '../UI/Divider';
 import { Heading } from '../UI/Heading';
 
+// custom hooks
+import useForm from '../../hooks/useForm';
+
 const Results = () => {
-  const formContext = useContext(FormContext);
+  const [state, dispatch] = useForm();
 
   // event functions
   const restartSurveyHandler = () => {
-    formContext.formDispatch({ type: 'RESTART_SURVEY' });
+    dispatch({ type: 'RESTART_SURVEY' });
   };
 
   return (

@@ -1,14 +1,13 @@
-import { useContext } from 'react';
 import type { ChangeEvent } from 'react';
-
-// context
-import FormContext from '../../context/FormContext';
 
 // styled components
 import * as S from './Question.styles';
 import { Button } from '../UI/Button';
 import { Heading } from '../UI/Heading';
 import { Wrapper } from '../UI/Wrapper';
+
+// custom hooks
+import useForm from '../../hooks/useForm';
 
 // data
 import options from '../../data/options';
@@ -21,31 +20,28 @@ import { FIRST_INDEX } from '../../constants/constants';
 import type { StepToRender } from '../../types/types';
 
 const Question = ({ stepToRender }: StepToRender) => {
-  const formContext = useContext(FormContext);
-
-  // destructure currentStep for cleaner jsx
-  const { currentQuestion, currentStep } = formContext.formState;
+  const [state, dispatch] = useForm();
 
   // event functions
   const incrementStepAndQuestionHandler = () => {
-    formContext.formDispatch({ type: 'INCREMENT_CURRENT_STEP_AND_QUESTION' });
+    dispatch({ type: 'INCREMENT_CURRENT_STEP_AND_QUESTION' });
   };
 
   const optionCheckedHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    formContext.formDispatch({ type: 'OPTION_CHECKED', payload: event.target.id });
+    dispatch({ type: 'OPTION_CHECKED', payload: event.target.id });
   };
 
-  return currentStep === stepToRender ? (
+  return state.currentStep === stepToRender ? (
     <Wrapper>
-      <S.CurrentQuestion>Question {currentQuestion}/3</S.CurrentQuestion>
+      <S.CurrentQuestion>Question {state.currentQuestion}/3</S.CurrentQuestion>
 
       <Heading as='h2' marginBottom={2} size='medium'>
-        {titles.filter((t) => t.step === currentStep)[FIRST_INDEX].title}
+        {titles.filter((t) => t.step === state.currentStep)[FIRST_INDEX].title}
       </Heading>
 
       <S.List>
         {options.map((option) =>
-          option.forQuestion === currentStep ? (
+          option.forQuestion === state.currentStep ? (
             <S.Item key={option.id}>
               <input id={option.id} onChange={optionCheckedHandler} type='checkbox' />
 

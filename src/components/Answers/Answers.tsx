@@ -1,12 +1,10 @@
-import { useContext } from 'react';
-
-// context
-import FormContext from '../../context/FormContext';
-
 // styled components
 import * as S from './Answers.styles';
 import { Divider } from '../UI/Divider';
 import { Heading } from '../UI/Heading';
+
+// custom hooks
+import useForm from '../../hooks/useForm';
 
 // data
 import options from '../../data/options';
@@ -21,9 +19,9 @@ type AnswersProps = {
 };
 
 const Answers = ({ index }: AnswersProps) => {
-  const formContext = useContext(FormContext);
+  const [state] = useForm();
 
-  const isSelected = (id: string) => formContext.formState.checkedOptions.indexOf(id) > -1;
+  const isSelected = (id: string) => state.checkedOptions.indexOf(id) > -1;
 
   return (
     <>
