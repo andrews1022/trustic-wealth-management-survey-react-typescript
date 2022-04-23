@@ -7,7 +7,7 @@ import { AnimatePresence } from 'framer-motion';
 
 // context
 import FormContext from '../../context/FormContext';
-import { formReducer, initialFormState } from '../../reducer/formReducer';
+import { formReducer, initialFormState } from '../../reducers/formReducer';
 
 // components
 import MasterForm from '../MasterForm/MasterForm';
