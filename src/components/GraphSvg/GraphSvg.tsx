@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 // context
 import FormContext from '../../context/FormContext';
 
 // styled components
-import * as S from './styles';
+import * as S from './GraphSvg.styles';
 
 const GraphSvg = () => {
   const formContext = useContext(FormContext);

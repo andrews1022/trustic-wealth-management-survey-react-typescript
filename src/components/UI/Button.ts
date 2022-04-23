@@ -10,6 +10,7 @@ type ButtonProps = {
   size: ButtonSize;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const setButtonMode = (mode: ButtonMode): FlattenInterpolation<ThemeProps<any>> => {
   switch (mode) {
     case 'hollow': {

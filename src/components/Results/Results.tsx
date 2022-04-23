@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 // context
 import FormContext from '../../context/FormContext';
 
 // components
-import Answers from '../Answers';
+import Answers from '../Answers/Answers';
 
 // styled components
-import * as S from './styles';
+import * as S from './Results.styles';
 import { Button } from '../UI/Button';
 import { Divider } from '../UI/Divider';
 import { Heading } from '../UI/Heading';

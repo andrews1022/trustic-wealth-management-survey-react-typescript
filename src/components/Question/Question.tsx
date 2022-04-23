@@ -1,10 +1,11 @@
-import React, { useContext, type ChangeEvent } from 'react';
+import { useContext } from 'react';
+import type { ChangeEvent } from 'react';
 
 // context
 import FormContext from '../../context/FormContext';
 
 // styled components
-import * as S from './styles';
+import * as S from './Question.styles';
 import { Button } from '../UI/Button';
 import { Heading } from '../UI/Heading';
 import { Wrapper } from '../UI/Wrapper';

@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 
-import React, { useReducer } from 'react';
+import { useReducer } from 'react';
 
 // animations
 import { AnimatePresence } from 'framer-motion';
@@ -10,7 +10,7 @@ import FormContext from '../../context/FormContext';
 import { formReducer, initialFormState } from '../../reducer/formReducer';
 
 // components
-import MasterForm from '../MasterForm';
+import MasterForm from '../MasterForm/MasterForm';
 
 const App = () => {
   const [state, dispatch] = useReducer(formReducer, initialFormState);

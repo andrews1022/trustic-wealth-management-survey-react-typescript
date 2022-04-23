@@ -1,18 +1,18 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { motion } from 'framer-motion';
 
 // context
 import FormContext from '../../context/FormContext';
 
 // components
-import GraphSvg from '../GraphSvg';
-import Intro from '../Intro';
-import Nav from '../Nav';
-import Question from '../Question';
-import Results from '../Results';
+import GraphSvg from '../GraphSvg/GraphSvg';
+import Intro from '../Intro/Intro';
+import Nav from '../Nav/Nav';
+import Question from '../Question/Question';
+import Results from '../Results/Results';
 
 // styled components
-import * as S from './styles';
+import * as S from './MasterForm.styles';
 
 // animations
 import { fadeInOut } from '../../animations/animations';

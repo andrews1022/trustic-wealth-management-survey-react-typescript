@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 // context
 import FormContext from '../../context/FormContext';
 
 // styled components
-import * as S from './styles';
+import * as S from './Answers.styles';
 import { Divider } from '../UI/Divider';
 import { Heading } from '../UI/Heading';
 
@@ -15,7 +15,7 @@ import titles from '../../data/titles';
 // animations
 import { widthAnim } from '../../animations/animations';
 
-// props
+// props type
 type AnswersProps = {
   index: number;
 };

@@ -1,7 +1,5 @@
-import React from 'react';
-
 // styled components
-import * as S from './styles';
+import * as S from './Nav.styles';
 import { Button } from '../UI/Button';
 
 const Nav = () => (

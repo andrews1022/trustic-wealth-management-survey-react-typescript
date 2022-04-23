@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 // context
 import FormContext from '../../context/FormContext';
 
 // styled components
-import * as S from './styles';
+import * as S from './Intro.styles';
 import { Button } from '../UI/Button';
 import { Heading } from '../UI/Heading';
 import { Wrapper } from '../UI/Wrapper';

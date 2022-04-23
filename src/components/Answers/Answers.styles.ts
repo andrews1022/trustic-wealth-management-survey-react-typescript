@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-// props
+// props type
 type IsSelected = {
   isSelected: boolean;
 };
